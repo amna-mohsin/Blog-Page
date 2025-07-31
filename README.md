@@ -2,8 +2,8 @@
 
 A clean and responsive blog-style website built using **HTML**, **CSS**, and **JavaScript** with features like live search, category filtering, and pagination. Ideal for personal blogs or project showcases.
 
-🔗 **Live Demo**: 
- [https://blog-website-a.netlify.app](https://blog-website-a.netlify.app)
+## 🔗 Live Site
+Visit the live website: (https://blog-website-a.netlify.app/)
 
 ##  Features
 
@@ -23,8 +23,8 @@ A clean and responsive blog-style website built using **HTML**, **CSS**, and **J
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/blog-website.git
-   cd blog-website
+   git clone https://github.com/amna-mohsin/Blog-Page.git
+  
 
 2. Open index.html in your browser to run locally.
 
