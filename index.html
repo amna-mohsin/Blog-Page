@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Personal Blog</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header>
+    <h1>My Personal Blog</h1>
+  </header>
+
+  <section class="controls">
+    <div class="filters">
+      <button onclick="filterCategory('All')" class="active">All</button>
+      <button onclick="filterCategory('Tech')">Tech</button>
+      <button onclick="filterCategory('Travel')">Travel</button>
+      <button onclick="filterCategory('Food')">Food</button>
+      <button onclick="filterCategory('Health')">Health</button>
+    </div>
+    <input type="text" id="searchInput" placeholder="Search by title..." oninput="applyFilters()" />
+  </section>
+
+  <main id="postsContainer" class="grid">
+    <!-- Blog cards -->
+    <!-- Tech -->
+    <div class="card" data-title="Exploring React 18 Features" data-category="Tech">
+      <img src="Assets/react-18.svg" />
+      <div class="card-content">
+        <h2>Exploring React 18 Features</h2>
+        <p>2025-07-20</p>
+        <p>A deep dive into the latest React release.</p>
+      </div>
+    </div>
+    <div class="card" data-title="Understanding JavaScript Closures" data-category="Tech">
+      <img src="Assets/Javascript.png" />
+      <div class="card-content">
+        <h2>Understanding JavaScript Closures</h2>
+        <p>2024-08-22</p>
+        <p>One of the trickiest but most powerful concepts in JS.</p>
+      </div>
+    </div>
+    <div class="card" data-title="Why Tailwind CSS Is Taking Over Frontend" data-category="Tech">
+      <img src="Assets/Tailwind Css.png" />
+      <div class="card-content">
+        <h2>Why Tailwind CSS Is Taking Over Frontend</h2>
+        <p>2024-10-12</p>
+        <p>Discover why Tailwind CSS is becoming the go-to utility-first framework for modern web development.</p>
+      </div>
+    </div>
+    <div class="card" data-title="Demystifying APIs: A Guide for Beginners" data-category="Tech">
+      <img src="Assets/API.png" />
+      <div class="card-content">
+        <h2>Demystifying APIs: A Guide for Beginners</h2>
+        <p>2024-10-20</p>
+        <p>Learn what APIs are, how they work, and how to use them to connect your frontend with real-world data.</p>
+      </div>
+    </div>
+    <div class="card" data-title="Git & GitHub: Version Control Mastery" data-category="Tech">
+      <img src="Assets/Github.jpg" />
+      <div class="card-content">
+        <h2>Git & GitHub: Version Control Mastery</h2>
+        <p>2024-09-05</p>
+        <p>Master the basics of Git and GitHub to streamline your development and collaboration process.</p>
+      </div>
+    </div>
+    <div class="card" data-title="What is DevOps? Tools & Workflow Explained" data-category="Tech">
+      <img src="Assets/DevOps.jpg" />
+      <div class="card-content">
+        <h2>What is DevOps? Tools & Workflow Explained</h2>
+        <p>2024-11-02</p>
+        <p>Understand how DevOps bridges development and operations, along with common tools like Docker and Jenkins.
+        </p>
+      </div>
+    </div>
+    <div class="card" data-title="The Rise of AI in Front-End Development" data-category="Tech">
+      <img src="Assets/AI.jpeg" />
+      <div class="card-content">
+        <h2>The Rise of AI in Front-End Development</h2>
+        <p>2023-11-05</p>
+        <p>Explore how artificial intelligence is transforming UI design, coding assistance, and personalized user
+          experiences.</p>
+      </div>
+    </div>
+    <div class="card" data-title="Quantum Computing: What Every Developer Should Know" data-category="Tech">
+      <img src="Assets/Quantum Computing.jpeg" />
+      <div class="card-content">
+        <h2>Quantum Computing: What Every Developer Should Know</h2>
+        <p>2024-11-15</p>
+        <p>Quantum computing is no longer just theory. Learn the basic concepts, potential use cases, and how it's
+          expected to change the way we solve complex problems.</p>
+      </div>
+    </div>
+
+    <!-- Travel -->
+    <div class="card" data-title="A Week in Paris" data-category="Travel">
+      <img src="Assets/Paris.jpg" />
+      <div class="card-content">
+        <h2>A Week in Paris</h2>
+        <p>2024-06-10</p>
+        <p>What to see, eat, and do in Paris in just one unforgettable week.</p>
+      </div>
+    </div>
+
+    <div class="card" data-title="Backpacking Across Northern Pakistan" data-category="Travel">
+      <img src="Assets/Pakistan.webp" />
+      <div class="card-content">
+        <h2>Backpacking Across Northern Pakistan</h2>
+        <p>2024-07-05</p>
+        <p>A stunning route through Hunza, Skardu, and Fairy Meadows.</p>
+      </div>
+    </div>
+
+    <div class="card" data-title="Top 10 Beaches in Southeast Asia" data-category="Travel">
+      <img src="Assets/Beaches.jpeg" />
+      <div class="card-content">
+        <h2>Top 10 Beaches in Southeast Asia</h2>
+        <p>2024-08-14</p>
+        <p>Crystal-clear water, white sand, and island vibes you can’t miss.</p>
+      </div>
+    </div>
+
+    <div class="card" data-title="Solo Travel Guide for Women" data-category="Travel">
+      <img src="Assets/solo.jpg" />
+      <div class="card-content">
+        <h2>Solo Travel Guide for Women</h2>
+        <p>2024-09-09</p>
+        <p>Tips, safety hacks, and destination ideas for empowering solo journeys.</p>
+      </div>
+    </div>
+
+    <div class="card" data-title="Budget-Friendly Europe Trip Itinerary" data-category="Travel">
+      <img src="Assets/Europe.avif" />
+      <div class="card-content">
+        <h2>Budget-Friendly Europe Trip Itinerary</h2>
+        <p>2024-10-01</p>
+        <p>How to explore Europe’s gems without breaking the bank.</p>
+      </div>
+    </div>
+
+    <div class="card" data-title="Desert Safari Adventures in Dubai" data-category="Travel">
+      <img src="Assets/Dubai.jpg" />
+      <div class="card-content">
+        <h2>Desert Safari Adventures in Dubai</h2>
+        <p>2024-10-20</p>
+        <p>Experience thrilling rides, local cuisine, and cultural shows in the dunes.</p>
+      </div>
+    </div>
+
+    <div class="card" data-title="A Photographer’s Dream: Iceland in Winter" data-category="Travel">
+      <img src="Assets/iceland.webp" />
+      <div class="card-content">
+        <h2>A Photographer’s Dream: Iceland in Winter</h2>
+        <p>2024-11-02</p>
+        <p>Chasing the northern lights, frozen waterfalls, and volcanic landscapes.</p>
+      </div>
+    </div>
+
+    <div class="card" data-title="Top Travel Apps to Plan Your Next Trip" data-category="Travel">
+      <img src="Assets/Travel apps.jpg" />
+      <div class="card-content">
+        <h2>Top Travel Apps to Plan Your Next Trip</h2>
+        <p>2024-11-12</p>
+        <p>These free apps help with flights, packing, itineraries, and finding deals.</p>
+      </div>
+    </div>
+
+    <!-- Food -->
+    <div class="card" data-title="Spaghetti Carbonara" data-category="Food">
+      <img src="Assets/Spaghetti-Carbonara.jpg" />
+      <div class="card-content">
+        <h2>Spaghetti Carbonara</h2>
+        <p>2024-06-22</p>
+        <p>A rich Italian pasta dish with egg, cheese, and pancetta — simple yet indulgent.</p>
+      </div>
+    </div>
+
+    <div class="card" data-title="French Croissants" data-category="Food">
+      <img src="Assets/French-Croissants.jpg" />
+      <div class="card-content">
+        <h2>French Croissants</h2>
+        <p>2024-05-29</p>
+        <p>Flaky, buttery, and baked to perfection — croissants are France’s morning delight.</p>
+      </div>
+    </div>
+    <div class="card" data-title="Chicken Biryani" data-category="Food">
+      <img src="Assets/Chicken-Biryani.jpg" />
+      <div class="card-content">
+        <h2>Chicken Biryani</h2>
+        <p>2024-07-20</p>
+        <p>Spicy, aromatic, and rich — biryani is a South Asian classic loved across borders.</p>
+      </div>
+    </div>
+
+    <div class="card" data-title="Thai Green Curry" data-category="Food">
+      <img src="Assets/thai-green-chicken-curry.jpg" />
+      <div class="card-content">
+        <h2>Thai Green Curry</h2>
+        <p>2024-07-01</p>
+        <p>A spicy yet creamy curry filled with the vibrant flavors of coconut milk and Thai herbs.</p>
+      </div>
+    </div>
+
+
+    <div class="card" data-title="Mexican Tacos" data-category="Food">
+      <img src="Assets/Mexican Tacos.jpg" />
+      <div class="card-content">
+        <h2>Mexican Tacos</h2>
+        <p>2024-06-10</p>
+        <p>From street carts to gourmet kitchens, tacos offer endless combinations of flavor and spice.</p>
+      </div>
+    </div>
+
+    <div class="card" data-title="New York Cheesecake" data-category="Food">
+      <img src="Assets/New-York-Cheesecake.jpg" />
+      <div class="card-content">
+        <h2>New York Cheesecake</h2>
+        <p>2024-07-05</p>
+        <p>Creamy, dense, and iconic — New York-style cheesecake is the ultimate dessert classic.</p>
+      </div>
+    </div>
+
+    <div class="card" data-title="Dim Sum Delights" data-category="Food">
+      <img src="Assets/Dim sum delights.jpeg" />
+      <div class="card-content">
+        <h2>Dim Sum Delights</h2>
+        <p>2024-05-12</p>
+        <p>Taste the variety of bite-sized Chinese dishes, from dumplings to buns, perfect for brunch.</p>
+      </div>
+    </div>
+
+
+    <div class="card" data-title="Exploring Global Street Foods" data-category="Food">
+      <img src="Assets/street food.jpg" />
+      <div class="card-content">
+        <h2>Exploring Global Street Foods</h2>
+        <p>2024-07-25</p>
+        <p>From tacos in Mexico to samosas in India—discover the flavors of street food around the world.</p>
+      </div>
+    </div>
+
+    <!-- Health -->
+    <div class="card" data-title="Mindful Morning Routines" data-category="Health">
+      <img src="Assets/morning-routine.jpg" />
+      <div class="card-content">
+        <h2>Mindful Morning Routines</h2>
+        <p>2024-06-05</p>
+        <p>Start your day with calm, clarity, and focus through simple mindfulness and stretching habits.</p>
+      </div>
+    </div>
+
+    <div class="card" data-title="The Power of Hydration" data-category="Health">
+      <img src="Assets/hydration.jpeg" />
+      <div class="card-content">
+        <h2>The Power of Hydration</h2>
+        <p>2024-06-22</p>
+        <p>Staying hydrated boosts energy, skin health, and brain function — drink smarter, live better.</p>
+      </div>
+    </div>
+
+    <div class="card" data-title="Balanced Diet Basics" data-category="Health">
+      <img src="Assets/Diet.jpg" />
+      <div class="card-content">
+        <h2>Balanced Diet Basics</h2>
+        <p>2024-07-12</p>
+        <p>Fuel your body right with the perfect mix of proteins, carbs, and good fats — a beginner's guide.</p>
+      </div>
+    </div>
+
+    <div class="card" data-title="Personalized Medicine: The Future of Treatment" data-category="Health">
+      <img src="Assets/personalized medicine.webp" />
+      <div class="card-content">
+        <h2>Personalized Medicine: The Future of Treatment</h2>
+        <p>2025-06-18</p>
+        <p>How DNA-based treatments are revolutionizing the healthcare industry by tailoring drugs to your genes.</p>
+      </div>
+    </div>
+
+    <div class="card" data-title="Mental Health Matters" data-category="Health">
+      <img src="Assets/mental health.jpg" />
+      <div class="card-content">
+        <h2>Mental Health Matters</h2>
+        <p>2024-05-28</p>
+        <p>Understanding anxiety, burnout, and how small steps like journaling or therapy can help you heal.</p>
+      </div>
+    </div>
+
+    <div class="card" data-title="Sleep: Your Superpower" data-category="Health">
+      <img src="Assets/sleep.jpeg" />
+      <div class="card-content">
+        <h2>Sleep: Your Superpower</h2>
+        <p>2024-07-18</p>
+        <p>Learn how quality sleep enhances memory, immunity, and mood — and how to fix your sleep cycle.</p>
+      </div>
+    </div>
+
+    <div class="card" data-title="Biohacking: Optimizing Your Body Through Science" data-category="Health">
+      <img src="Assets/biohacking.jpg" />
+      <div class="card-content">
+        <h2>Biohacking: Optimizing Your Body Through Science</h2>
+        <p>2025-07-01</p>
+        <p>Discover how people are using tech, supplements, and smart habits to upgrade sleep, energy, and brain
+          function.</p>
+      </div>
+    </div>
+    <div class="card" data-title="Neurotechnology: Hacking the Human Brain" data-category="Health">
+      <img src="Assets/neurotechnology.jpg" />
+      <div class="card-content">
+        <h2>Neurotechnology: Hacking the Human Brain</h2>
+        <p>2025-07-10</p>
+        <p>Discover how brain-computer interfaces (BCIs) and neural implants are reshaping mental health, mobility, and
+          communication.</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="pagination" id="pagination"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
