@@ -3,7 +3,7 @@
 A clean and responsive blog-style website built using **HTML**, **CSS**, and **JavaScript** with features like live search, category filtering, and pagination. Ideal for personal blogs or project showcases.
 
 ## 🔗 Live Site
-Visit the live website: (https://blog-website-a.netlify.app/)
+Visit the live website: [https://blog-website-a.netlify.app/]
 
 ##  Features
 
